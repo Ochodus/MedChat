@@ -10,18 +10,18 @@ Cutting-edge medical chatbot model, powered by the llama3 platform and leveragin
     pip install -e .
     ```
 3. Execute chatbot server with streamlit
-```bash
-streamlit run app.py -- --model llama3:70b-instruct-q8_0 --prompt ollama_llama3 --translator deepL --max_q 10
-```
+    ```bash
+    streamlit run app.py -- --model llama3:70b-instruct-q8_0 --prompt ollama_llama3 --translator deepL --max_q 10
+    ```
 4. Enter api key on terminal if using deepL translator 
 
 **Note**
 - Replace  `--model llama3:70b-instruct-q8_0` with the id of ollama models. It is also available to use huggingface models.
 - max_q means the number of questions that allow to chatbot before diagnosing.
 - You need to download ollama model to local first to use it by
-```bash
-ollama pull llama3:70b-instruct-q8_0
-```
+    ```bash
+    ollama pull llama3:70b-instruct-q8_0
+    ```
 
 ## License
 
