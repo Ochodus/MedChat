@@ -38,8 +38,11 @@ def get_logger(path="."):
     logger.addHandler(file_handler)
     
     return logger
-
+    
 st.title("MedChat V1.0")
+
+history = st.container(height=500, border=False)
+col1, col2 = st.columns([3, 1])
 
 def init_conversation(force_init=False):
     if not 'logger' in st.session_state or force_init:
@@ -54,8 +57,9 @@ def init_conversation(force_init=False):
     if not 'messages' in st.session_state or force_init:
         st.session_state.messages = [{"role": "assistant", "content": START_GREETING}]
         st.session_state.logger.info(f"Med Chat: {START_GREETING}")
-        with st.chat_message("assistant"):
-            st.write_stream(response_generator(START_GREETING))
+        with history:
+            with st.chat_message("assistant"):
+                st.write_stream(response_generator(START_GREETING))
 
 def response_generator(response):
     for word in response.split(" "):
@@ -64,11 +68,18 @@ def response_generator(response):
         
 init_conversation()
 
-col1, col2 = st.columns([4, 1])
-
+# React to user input
 with col1:
-    # React to user input
-    if prompt := st.chat_input("What is up?"):
+    prompt = st.chat_input("What is up?")
+with col2:
+    # Utilize reset button
+    reset_button_key = "reset_button"
+    reset_button = st.button("Reset Chat", key=reset_button_key)
+    if reset_button:
+        init_conversation(force_init=True)
+
+with history:
+    if prompt:
         # Display user message in chat message container
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -84,10 +95,3 @@ with col1:
             
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
-
-with col2:
-    # Utilize reset button
-    reset_button_key = "reset_button"
-    reset_button = st.button("Reset Chat", key=reset_button_key)
-    if reset_button:
-        init_conversation(force_init=True)
