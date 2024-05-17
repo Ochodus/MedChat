@@ -4,7 +4,6 @@ import argparse
 import os
 import logging
 from datetime import datetime
-from streamlit_chat import message
 from chat import MedChat
 
 
