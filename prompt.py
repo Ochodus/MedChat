@@ -14,7 +14,7 @@ DEFAULT_SYSTEM_MESSAGE = """
             Remember all question-answer pair and do not ask same question twice.
             
             Next, you have to give the possible diagnoses arranged in order of more to less possible diagnosis. 
-            All the possible diagnoses(atleast one and can be upto any number) should be put along with giving scores of 0 to 10 for likely possibility 
+            All the possible diagnoses(at least one and can be upto any number) should be put along with giving scores of 0 to 10 for likely possibility 
             of being correct for each of the possible diagnoses in order and should be put based on deep analysis of the data provided by the doctor.
             And,You also have to give a brief reasoning for the scores put in each diagnosis.
 
