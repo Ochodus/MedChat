@@ -106,14 +106,6 @@ tiktoken==0.6.0
 tokenizers==0.19.1
 toml==0.10.2
 toolz==0.12.1
-
--i https://download.pytorch.org/whl/cu118
-torch==2.3.0
--i https://download.pytorch.org/whl/cu118
-torchaudio==2.3.0
--i https://download.pytorch.org/whl/cu118
-torchvision==0.18.0+cu118
-
 tornado==6.4
 tqdm==4.66.2
 transformers==4.40.2
