@@ -31,6 +31,9 @@ DEFAULT_SYSTEM_MESSAGE = """
         
 DEFAULT_HUMAN_MESSAGE = """
     Last line:
+
+    You can reference the result of RAG: {rag} 
+
     Human: {input}
     You:
     """

@@ -1,0 +1,2 @@
+med_vectorstore/index.faiss filter=lfs diff=lfs merge=lfs -text
+med_vectorstore/index.pkl filter=lfs diff=lfs merge=lfs -text
