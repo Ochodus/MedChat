@@ -1,6 +1,4 @@
 import os
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain_community.chat_models import ChatOllama
